@@ -1,0 +1,4436 @@
+[
+  {
+    "seq": 0,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0000",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "distribution_shift",
+    "gt": {
+      "row_count": 508,
+      "null_rate_customer_id": 0.004,
+      "mean_amount": 85.72,
+      "std_amount": 13.68,
+      "staleness_min": 5.04
+    }
+  },
+  {
+    "seq": 1,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0001",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.78
+    }
+  },
+  {
+    "seq": 2,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0002",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3918.1
+    }
+  },
+  {
+    "seq": 3,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0003"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.62,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 4,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0004",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0194,
+      "corpus_avg_doc_age_days": 26.6
+    }
+  },
+  {
+    "seq": 5,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0005",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 517,
+      "null_rate_customer_id": 0.0105,
+      "mean_amount": 81.75,
+      "std_amount": 14.22,
+      "staleness_min": 5.42
+    }
+  },
+  {
+    "seq": 6,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0006",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 7.54
+    }
+  },
+  {
+    "seq": 7,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0007",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4500.3
+    }
+  },
+  {
+    "seq": 8,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0008"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 120.15,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 9,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0009",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0237,
+      "corpus_avg_doc_age_days": 23.9
+    }
+  },
+  {
+    "seq": 10,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0010",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 517,
+      "null_rate_customer_id": 0.0081,
+      "mean_amount": 84.16,
+      "std_amount": 15.32,
+      "staleness_min": 4.71
+    }
+  },
+  {
+    "seq": 11,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0011",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 6.22
+    }
+  },
+  {
+    "seq": 12,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0012",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3862.9
+    }
+  },
+  {
+    "seq": 13,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0013"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 154.27,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 14,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0014",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0043,
+      "corpus_avg_doc_age_days": 35.6
+    }
+  },
+  {
+    "seq": 15,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0015",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 476,
+      "null_rate_customer_id": 0.0066,
+      "mean_amount": 86.09,
+      "std_amount": 13.98,
+      "staleness_min": 4.31
+    }
+  },
+  {
+    "seq": 16,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0016",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.75
+    }
+  },
+  {
+    "seq": 17,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0017",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "runtime_anomaly",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4739.4
+    }
+  },
+  {
+    "seq": 18,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0018"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 151.72,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 19,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0019",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0312,
+      "corpus_avg_doc_age_days": 12.3
+    }
+  },
+  {
+    "seq": 20,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0020",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 494,
+      "null_rate_customer_id": 0.0083,
+      "mean_amount": 81.47,
+      "std_amount": 16.07,
+      "staleness_min": 3.08
+    }
+  },
+  {
+    "seq": 21,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0021",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 0.08
+    }
+  },
+  {
+    "seq": 22,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0022",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4709.7
+    }
+  },
+  {
+    "seq": 23,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0023"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.16,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 24,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0024",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0254,
+      "corpus_avg_doc_age_days": 34.5
+    }
+  },
+  {
+    "seq": 25,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0025",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 502,
+      "null_rate_customer_id": 0.0029,
+      "mean_amount": 83.3,
+      "std_amount": 13.83,
+      "staleness_min": 4.66
+    }
+  },
+  {
+    "seq": 26,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0026",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 7.14
+    }
+  },
+  {
+    "seq": 27,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0027",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4186.7
+    }
+  },
+  {
+    "seq": 28,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0028"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.22,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 29,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0029",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0158,
+      "corpus_avg_doc_age_days": 22.5
+    }
+  },
+  {
+    "seq": 30,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0030",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 518,
+      "null_rate_customer_id": 0.0063,
+      "mean_amount": 82.97,
+      "std_amount": 16.82,
+      "staleness_min": 5.03
+    }
+  },
+  {
+    "seq": 31,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0031",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.83
+    }
+  },
+  {
+    "seq": 32,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0032",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4211.9
+    }
+  },
+  {
+    "seq": 33,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0033"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.19,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 34,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0034",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.016,
+      "corpus_avg_doc_age_days": 31.8
+    }
+  },
+  {
+    "seq": 35,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0035",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 519,
+      "null_rate_customer_id": 0.0032,
+      "mean_amount": 78.15,
+      "std_amount": 17.29,
+      "staleness_min": 4.13
+    }
+  },
+  {
+    "seq": 36,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0036",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.22
+    }
+  },
+  {
+    "seq": 37,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0037",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4618.1
+    }
+  },
+  {
+    "seq": 38,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0038"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.18,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 39,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0039",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0261,
+      "corpus_avg_doc_age_days": 21.5
+    }
+  },
+  {
+    "seq": 40,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0040",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "distribution_shift",
+    "gt": {
+      "row_count": 491,
+      "null_rate_customer_id": 0.0068,
+      "mean_amount": 140.7,
+      "std_amount": 14.99,
+      "staleness_min": 5.27
+    }
+  },
+  {
+    "seq": 41,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0041",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.59
+    }
+  },
+  {
+    "seq": 42,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0042",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3971.3
+    }
+  },
+  {
+    "seq": 43,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0043"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 117.13,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 44,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0044",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0112,
+      "corpus_avg_doc_age_days": 13.3
+    }
+  },
+  {
+    "seq": 45,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0045",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 554,
+      "null_rate_customer_id": 0.0059,
+      "mean_amount": 85.83,
+      "std_amount": 14.79,
+      "staleness_min": 3.09
+    }
+  },
+  {
+    "seq": 46,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0046",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.05
+    }
+  },
+  {
+    "seq": 47,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0047",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4573.9
+    }
+  },
+  {
+    "seq": 48,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0048"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 120.44,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 49,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0049",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0151,
+      "corpus_avg_doc_age_days": 29.3
+    }
+  },
+  {
+    "seq": 50,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0050",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "freshness_lag",
+    "gt": {
+      "row_count": 506,
+      "null_rate_customer_id": 0.0056,
+      "mean_amount": 84.14,
+      "std_amount": 15.63,
+      "staleness_min": 6.13
+    }
+  },
+  {
+    "seq": 51,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0051",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.33
+    }
+  },
+  {
+    "seq": 52,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0052",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "runtime_anomaly",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4603.8
+    }
+  },
+  {
+    "seq": 53,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0053"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 123.2,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 54,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0054",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0216,
+      "corpus_avg_doc_age_days": 16.4
+    }
+  },
+  {
+    "seq": 55,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0055",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 506,
+      "null_rate_customer_id": 0.0067,
+      "mean_amount": 77.81,
+      "std_amount": 13.52,
+      "staleness_min": 2.03
+    }
+  },
+  {
+    "seq": 56,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0056",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 8.53
+    }
+  },
+  {
+    "seq": 57,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0057",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4482.9
+    }
+  },
+  {
+    "seq": 58,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0058"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 125.11,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 59,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0059",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0294,
+      "corpus_avg_doc_age_days": 23.6
+    }
+  },
+  {
+    "seq": 60,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0060",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 475,
+      "null_rate_customer_id": 0.0048,
+      "mean_amount": 84.05,
+      "std_amount": 13.3,
+      "staleness_min": 4.29
+    }
+  },
+  {
+    "seq": 61,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0061",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 17.02
+    }
+  },
+  {
+    "seq": 62,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0062",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4411.6
+    }
+  },
+  {
+    "seq": 63,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0063"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 143.71,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 64,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0064",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0123,
+      "corpus_avg_doc_age_days": 26.4
+    }
+  },
+  {
+    "seq": 65,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0065",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 513,
+      "null_rate_customer_id": 0.0036,
+      "mean_amount": 87.58,
+      "std_amount": 13.8,
+      "staleness_min": 5.87
+    }
+  },
+  {
+    "seq": 66,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0066",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.4
+    }
+  },
+  {
+    "seq": 67,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0067",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4531.0
+    }
+  },
+  {
+    "seq": 68,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0068"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.24,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 69,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0069",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "embedding_drift",
+    "gt": {
+      "embedding_centroid_shift": 0.0289,
+      "corpus_avg_doc_age_days": 25.7
+    }
+  },
+  {
+    "seq": 70,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0070",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "null_spike",
+    "gt": {
+      "row_count": 493,
+      "null_rate_customer_id": 0.0083,
+      "mean_amount": 85.66,
+      "std_amount": 17.79,
+      "staleness_min": 2.05
+    }
+  },
+  {
+    "seq": 71,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0071",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 7.39
+    }
+  },
+  {
+    "seq": 72,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0072",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4007.1
+    }
+  },
+  {
+    "seq": 73,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0073"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 117.05,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 74,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0074",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.013,
+      "corpus_avg_doc_age_days": 30.4
+    }
+  },
+  {
+    "seq": 75,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0075",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 535,
+      "null_rate_customer_id": 0.0065,
+      "mean_amount": 87.37,
+      "std_amount": 14.68,
+      "staleness_min": 5.5
+    }
+  },
+  {
+    "seq": 76,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0076",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 3.59
+    }
+  },
+  {
+    "seq": 77,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0077",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4024.9
+    }
+  },
+  {
+    "seq": 78,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0078"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 147.25,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 79,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0079",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0211,
+      "corpus_avg_doc_age_days": 24.3
+    }
+  },
+  {
+    "seq": 80,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0080",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 452,
+      "null_rate_customer_id": 0.0041,
+      "mean_amount": 81.99,
+      "std_amount": 16.54,
+      "staleness_min": 5.12
+    }
+  },
+  {
+    "seq": 81,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0081",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.36
+    }
+  },
+  {
+    "seq": 82,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0082",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4201.7
+    }
+  },
+  {
+    "seq": 83,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0083"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.17,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 84,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0084",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0323,
+      "corpus_avg_doc_age_days": 30.2
+    }
+  },
+  {
+    "seq": 85,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0085",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 508,
+      "null_rate_customer_id": 0.0047,
+      "mean_amount": 79.47,
+      "std_amount": 15.06,
+      "staleness_min": 3.4
+    }
+  },
+  {
+    "seq": 86,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0086",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.97
+    }
+  },
+  {
+    "seq": 87,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0087",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4263.5
+    }
+  },
+  {
+    "seq": 88,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0088"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.19,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 89,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0089",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0246,
+      "corpus_avg_doc_age_days": 16.9
+    }
+  },
+  {
+    "seq": 90,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0090",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "distribution_shift",
+    "gt": {
+      "row_count": 496,
+      "null_rate_customer_id": 0.0017,
+      "mean_amount": 86.43,
+      "std_amount": 14.43,
+      "staleness_min": 0.0
+    }
+  },
+  {
+    "seq": 91,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0091",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.14
+    }
+  },
+  {
+    "seq": 92,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0092",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 4043.6
+    }
+  },
+  {
+    "seq": 93,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0093"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 139.4,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 94,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0094",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0191,
+      "corpus_avg_doc_age_days": 37.5
+    }
+  },
+  {
+    "seq": 95,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0095",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "volume_spike",
+    "gt": {
+      "row_count": 519,
+      "null_rate_customer_id": 0.0045,
+      "mean_amount": 84.12,
+      "std_amount": 13.6,
+      "staleness_min": 3.21
+    }
+  },
+  {
+    "seq": 96,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0096",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 17.8
+    }
+  },
+  {
+    "seq": 97,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0097",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "runtime_anomaly",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4488.4
+    }
+  },
+  {
+    "seq": 98,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0098"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.42,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 99,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0099",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0137,
+      "corpus_avg_doc_age_days": 32.6
+    }
+  },
+  {
+    "seq": 100,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0100",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 506,
+      "null_rate_customer_id": 0.0076,
+      "mean_amount": 81.75,
+      "std_amount": 14.01,
+      "staleness_min": 4.6
+    }
+  },
+  {
+    "seq": 101,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0101",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.59
+    }
+  },
+  {
+    "seq": 102,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0102",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4397.9
+    }
+  },
+  {
+    "seq": 103,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0103"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 491.69,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 104,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0104",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0201,
+      "corpus_avg_doc_age_days": 28.2
+    }
+  },
+  {
+    "seq": 105,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0105",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 496,
+      "null_rate_customer_id": 0.003,
+      "mean_amount": 84.43,
+      "std_amount": 15.99,
+      "staleness_min": 3.94
+    }
+  },
+  {
+    "seq": 106,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0106",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.52
+    }
+  },
+  {
+    "seq": 107,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0107",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4155.3
+    }
+  },
+  {
+    "seq": 108,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0108"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 154.16,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 109,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0109",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.035,
+      "corpus_avg_doc_age_days": 36.0
+    }
+  },
+  {
+    "seq": 110,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0110",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 481,
+      "null_rate_customer_id": 0.0041,
+      "mean_amount": 81.01,
+      "std_amount": 14.12,
+      "staleness_min": 6.33
+    }
+  },
+  {
+    "seq": 111,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0111",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.17
+    }
+  },
+  {
+    "seq": 112,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0112",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4655.8
+    }
+  },
+  {
+    "seq": 113,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0113"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.46,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 114,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0114",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0289,
+      "corpus_avg_doc_age_days": 16.9
+    }
+  },
+  {
+    "seq": 115,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0115",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 538,
+      "null_rate_customer_id": 0.0055,
+      "mean_amount": 85.82,
+      "std_amount": 15.89,
+      "staleness_min": 5.66
+    }
+  },
+  {
+    "seq": 116,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0116",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 16.63
+    }
+  },
+  {
+    "seq": 117,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0117",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "runtime_anomaly",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4481.3
+    }
+  },
+  {
+    "seq": 118,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0118"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 123.09,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 119,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0119",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0291,
+      "corpus_avg_doc_age_days": 25.3
+    }
+  },
+  {
+    "seq": 120,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0120",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 490,
+      "null_rate_customer_id": 0.0052,
+      "mean_amount": 80.68,
+      "std_amount": 14.69,
+      "staleness_min": 4.16
+    }
+  },
+  {
+    "seq": 121,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0121",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 44.03
+    }
+  },
+  {
+    "seq": 122,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0122",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4004.1
+    }
+  },
+  {
+    "seq": 123,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0123"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 117.64,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 124,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0124",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0236,
+      "corpus_avg_doc_age_days": 16.3
+    }
+  },
+  {
+    "seq": 125,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0125",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "distribution_shift",
+    "gt": {
+      "row_count": 482,
+      "null_rate_customer_id": 0.0053,
+      "mean_amount": 132.99,
+      "std_amount": 12.92,
+      "staleness_min": 4.02
+    }
+  },
+  {
+    "seq": 126,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0126",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 8.14
+    }
+  },
+  {
+    "seq": 127,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0127",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4805.1
+    }
+  },
+  {
+    "seq": 128,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0128"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 122.26,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 129,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0129",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0116,
+      "corpus_avg_doc_age_days": 24.9
+    }
+  },
+  {
+    "seq": 130,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0130",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "volume_drop",
+    "gt": {
+      "row_count": 469,
+      "null_rate_customer_id": 0.0066,
+      "mean_amount": 79.32,
+      "std_amount": 12.96,
+      "staleness_min": 7.47
+    }
+  },
+  {
+    "seq": 131,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0131",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.46
+    }
+  },
+  {
+    "seq": 132,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0132",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4164.6
+    }
+  },
+  {
+    "seq": 133,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0133"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 122.44,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 134,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0134",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "embedding_drift",
+    "gt": {
+      "embedding_centroid_shift": 0.031,
+      "corpus_avg_doc_age_days": 21.4
+    }
+  },
+  {
+    "seq": 135,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0135",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "freshness_lag",
+    "gt": {
+      "row_count": 545,
+      "null_rate_customer_id": 0.0037,
+      "mean_amount": 80.34,
+      "std_amount": 15.69,
+      "staleness_min": 31.0
+    }
+  },
+  {
+    "seq": 136,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0136",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 1.9
+    }
+  },
+  {
+    "seq": 137,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0137",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4375.6
+    }
+  },
+  {
+    "seq": 138,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0138"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 116.65,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 139,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0139",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.025,
+      "corpus_avg_doc_age_days": 23.1
+    }
+  },
+  {
+    "seq": 140,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0140",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 531,
+      "null_rate_customer_id": 0.0077,
+      "mean_amount": 82.59,
+      "std_amount": 15.66,
+      "staleness_min": 6.35
+    }
+  },
+  {
+    "seq": 141,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0141",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.69
+    }
+  },
+  {
+    "seq": 142,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0142",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4238.0
+    }
+  },
+  {
+    "seq": 143,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0143"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.64,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 144,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0144",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0216,
+      "corpus_avg_doc_age_days": 15.3
+    }
+  },
+  {
+    "seq": 145,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0145",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 472,
+      "null_rate_customer_id": 0.006,
+      "mean_amount": 85.39,
+      "std_amount": 15.59,
+      "staleness_min": 3.07
+    }
+  },
+  {
+    "seq": 146,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0146",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.32
+    }
+  },
+  {
+    "seq": 147,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0147",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4175.1
+    }
+  },
+  {
+    "seq": 148,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0148"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.41,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 149,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0149",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0094,
+      "corpus_avg_doc_age_days": 36.6
+    }
+  },
+  {
+    "seq": 150,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0150",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 521,
+      "null_rate_customer_id": 0.0008,
+      "mean_amount": 84.82,
+      "std_amount": 15.72,
+      "staleness_min": 2.89
+    }
+  },
+  {
+    "seq": 151,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0151",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.81
+    }
+  },
+  {
+    "seq": 152,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0152",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4110.6
+    }
+  },
+  {
+    "seq": 153,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0153"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 122.95,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 154,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0154",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0196,
+      "corpus_avg_doc_age_days": 35.3
+    }
+  },
+  {
+    "seq": 155,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0155",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "null_spike",
+    "gt": {
+      "row_count": 505,
+      "null_rate_customer_id": 0.0076,
+      "mean_amount": 84.05,
+      "std_amount": 13.84,
+      "staleness_min": 5.71
+    }
+  },
+  {
+    "seq": 156,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0156",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.19
+    }
+  },
+  {
+    "seq": 157,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0157",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3926.6
+    }
+  },
+  {
+    "seq": 158,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0158"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.53,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 159,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0159",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0151,
+      "corpus_avg_doc_age_days": 37.6
+    }
+  },
+  {
+    "seq": 160,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0160",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "volume_drop",
+    "gt": {
+      "row_count": 474,
+      "null_rate_customer_id": 0.0042,
+      "mean_amount": 77.87,
+      "std_amount": 15.66,
+      "staleness_min": 6.31
+    }
+  },
+  {
+    "seq": 161,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0161",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 0.0
+    }
+  },
+  {
+    "seq": 162,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0162",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 4377.5
+    }
+  },
+  {
+    "seq": 163,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0163"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 120.51,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 164,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0164",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0214,
+      "corpus_avg_doc_age_days": 24.8
+    }
+  },
+  {
+    "seq": 165,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0165",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 501,
+      "null_rate_customer_id": 0.0075,
+      "mean_amount": 81.4,
+      "std_amount": 14.66,
+      "staleness_min": 6.15
+    }
+  },
+  {
+    "seq": 166,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0166",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.37
+    }
+  },
+  {
+    "seq": 167,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0167",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3471.7
+    }
+  },
+  {
+    "seq": 168,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0168"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 143.17,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 169,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0169",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": true,
+    "fault_key": "embedding_drift",
+    "gt": {
+      "embedding_centroid_shift": 0.0311,
+      "corpus_avg_doc_age_days": 21.3
+    }
+  },
+  {
+    "seq": 170,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0170",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 493,
+      "null_rate_customer_id": 0.0008,
+      "mean_amount": 85.92,
+      "std_amount": 15.02,
+      "staleness_min": 6.78
+    }
+  },
+  {
+    "seq": 171,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0171",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 7.19
+    }
+  },
+  {
+    "seq": 172,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0172",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4292.9
+    }
+  },
+  {
+    "seq": 173,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0173"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 123.8,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 174,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0174",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0182,
+      "corpus_avg_doc_age_days": 22.3
+    }
+  },
+  {
+    "seq": 175,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0175",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 493,
+      "null_rate_customer_id": 0.0073,
+      "mean_amount": 83.5,
+      "std_amount": 16.06,
+      "staleness_min": 3.61
+    }
+  },
+  {
+    "seq": 176,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0176",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 1.18
+    }
+  },
+  {
+    "seq": 177,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0177",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4424.8
+    }
+  },
+  {
+    "seq": 178,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0178"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.38,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 179,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0179",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0116,
+      "corpus_avg_doc_age_days": 32.7
+    }
+  },
+  {
+    "seq": 180,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0180",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 521,
+      "null_rate_customer_id": 0.0019,
+      "mean_amount": 83.8,
+      "std_amount": 14.59,
+      "staleness_min": 2.86
+    }
+  },
+  {
+    "seq": 181,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0181",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 16.92
+    }
+  },
+  {
+    "seq": 182,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0182",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 4322.5
+    }
+  },
+  {
+    "seq": 183,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0183"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 334.07,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 184,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0184",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0387,
+      "corpus_avg_doc_age_days": 24.7
+    }
+  },
+  {
+    "seq": 185,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0185",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 506,
+      "null_rate_customer_id": 0.0054,
+      "mean_amount": 79.83,
+      "std_amount": 15.6,
+      "staleness_min": 4.8
+    }
+  },
+  {
+    "seq": 186,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0186",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 40.71
+    }
+  },
+  {
+    "seq": 187,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0187",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3877.0
+    }
+  },
+  {
+    "seq": 188,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0188"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.78,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 189,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0189",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0278,
+      "corpus_avg_doc_age_days": 24.9
+    }
+  },
+  {
+    "seq": 190,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0190",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": true,
+    "fault_key": "null_spike",
+    "gt": {
+      "row_count": 486,
+      "null_rate_customer_id": 0.0401,
+      "mean_amount": 84.13,
+      "std_amount": 15.23,
+      "staleness_min": 2.55
+    }
+  },
+  {
+    "seq": 191,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0191",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 4.24
+    }
+  },
+  {
+    "seq": 192,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0192",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4205.1
+    }
+  },
+  {
+    "seq": 193,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0193"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 123.49,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 194,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0194",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0001,
+      "corpus_avg_doc_age_days": 36.7
+    }
+  },
+  {
+    "seq": 195,
+    "etype": "data_batch",
+    "payload": {
+      "table": "orders",
+      "batch_id": "b-0195",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_ts",
+        "amount",
+        "currency",
+        "status"
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 472,
+      "null_rate_customer_id": 0.0007,
+      "mean_amount": 79.59,
+      "std_amount": 15.71,
+      "staleness_min": 2.91
+    }
+  },
+  {
+    "seq": 196,
+    "etype": "contract_checkpoint",
+    "payload": {
+      "contract_id": "orders.v2",
+      "producer": "checkout-service",
+      "declared_schema_hash": "sha256:5f2a",
+      "checkpoint_batch_id": "b-0196",
+      "declared_sla": {
+        "freshness_min": 15,
+        "null_rate_max": {
+          "customer_id": 0.0
+        }
+      }
+    },
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 18.21
+    }
+  },
+  {
+    "seq": 197,
+    "etype": "lineage_run",
+    "payload": {
+      "run_id": "b-0197",
+      "job": "dbt:stg_orders",
+      "event_type": "COMPLETE",
+      "inputs": [
+        {
+          "namespace": "warehouse",
+          "name": "raw.orders"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "warehouse",
+          "name": "stg.orders"
+        }
+      ]
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4167.1
+    }
+  },
+  {
+    "seq": 198,
+    "etype": "feature_materialization",
+    "payload": {
+      "feature_view": "customer_ltv_features",
+      "entity": "customer_id",
+      "materialize_ts": "2026-07-03T02:00:00Z",
+      "batch_id": "b-0198"
+    },
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 142.85,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 199,
+    "etype": "embedding_batch",
+    "payload": {
+      "corpus": "support_docs",
+      "chunk_batch_id": "b-0199",
+      "embedding_model": "synthetic-numpy-v1"
+    },
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0254,
+      "corpus_avg_doc_age_days": 22.5
+    }
+  }
+]

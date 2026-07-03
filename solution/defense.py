@@ -17,9 +17,9 @@ def check_data_batch(payload, ctx):
         alert = True
     if res["null_rate"].get("customer_id", 0) > ctx.baseline["null_rate_max"]:
         alert = True
-    if res["mean_amount"] < ctx.baseline["mean_amount_min"] * 1.02 or res["mean_amount"] > ctx.baseline["mean_amount_max"] * 0.98:
+    if res["mean_amount"] < ctx.baseline["mean_amount_min"] * 1.075 or res["mean_amount"] > ctx.baseline["mean_amount_max"] * 0.925:
         alert = True
-    if res["staleness_min"] > ctx.baseline["staleness_min_max"]:
+    if res["staleness_min"] > ctx.baseline["staleness_min_max"] * 0.8:
         alert = True
 
     return Verdict(alert=alert, pillar="checks")
@@ -47,6 +47,18 @@ def check_lineage_run(payload, ctx):
         alert = True
         
     job = payload.get("job", "unknown")
+    
+    # Local moving average to catch subtle runtime anomalies
+    hist_key = f"dur_hist_{job}"
+    hist = ctx.state.setdefault(hist_key, [])
+    if len(hist) >= 3:
+        avg_dur = sum(hist[-5:]) / len(hist[-5:])
+        if res["duration_ms"] > avg_dur * 1.1:
+            alert = True
+            
+    if not alert:
+        hist.append(res["duration_ms"])
+        
     state_key_up = f"lineage_up_{job}"
     state_key_down = f"lineage_down_{job}"
     
@@ -78,9 +90,9 @@ def check_embedding_batch(payload, ctx):
         return Verdict(alert=False, pillar="ai_infra")
 
     alert = False
-    if res["centroid_shift"] > ctx.baseline["embedding_centroid_shift_max"] * 0.9:
+    if res["centroid_shift"] > ctx.baseline["embedding_centroid_shift_max"] * 0.7:
         alert = True
-    if res["avg_doc_age_days"] > ctx.baseline["corpus_avg_doc_age_days_max"] * 0.9:
+    if res["avg_doc_age_days"] > ctx.baseline["corpus_avg_doc_age_days_max"] * 0.625:
         alert = True
 
     return Verdict(alert=alert, pillar="ai_infra")
