@@ -1,0 +1,1889 @@
+[
+  {
+    "seq": 0,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 496,
+      "null_rate_customer_id": 0.0027,
+      "mean_amount": 82.66,
+      "std_amount": 13.73,
+      "staleness_min": 6.28
+    }
+  },
+  {
+    "seq": 1,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 2.16
+    }
+  },
+  {
+    "seq": 2,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4157.4
+    }
+  },
+  {
+    "seq": 3,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.11,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 4,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0144,
+      "corpus_avg_doc_age_days": 32.1
+    }
+  },
+  {
+    "seq": 5,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 471,
+      "null_rate_customer_id": 0.003,
+      "mean_amount": 79.17,
+      "std_amount": 14.25,
+      "staleness_min": 2.27
+    }
+  },
+  {
+    "seq": 6,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.83
+    }
+  },
+  {
+    "seq": 7,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4183.3
+    }
+  },
+  {
+    "seq": 8,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 124.85,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 9,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0184,
+      "corpus_avg_doc_age_days": 25.5
+    }
+  },
+  {
+    "seq": 10,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 448,
+      "null_rate_customer_id": 0.0021,
+      "mean_amount": 84.4,
+      "std_amount": 14.51,
+      "staleness_min": 3.47
+    }
+  },
+  {
+    "seq": 11,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.3
+    }
+  },
+  {
+    "seq": 12,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3540.1
+    }
+  },
+  {
+    "seq": 13,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 442.96,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 14,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0189,
+      "corpus_avg_doc_age_days": 29.9
+    }
+  },
+  {
+    "seq": 15,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 476,
+      "null_rate_customer_id": 0.0023,
+      "mean_amount": 82.85,
+      "std_amount": 15.04,
+      "staleness_min": 4.05
+    }
+  },
+  {
+    "seq": 16,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 7.83
+    }
+  },
+  {
+    "seq": 17,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3959.8
+    }
+  },
+  {
+    "seq": 18,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 447.34,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 19,
+    "etype": "embedding_batch",
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0185,
+      "corpus_avg_doc_age_days": 48.3
+    }
+  },
+  {
+    "seq": 20,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 525,
+      "null_rate_customer_id": 0.0033,
+      "mean_amount": 83.53,
+      "std_amount": 14.37,
+      "staleness_min": 3.75
+    }
+  },
+  {
+    "seq": 21,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 1.95
+    }
+  },
+  {
+    "seq": 22,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3503.3
+    }
+  },
+  {
+    "seq": 23,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 110.56,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 24,
+    "etype": "embedding_batch",
+    "actual": true,
+    "fault_key": "embedding_drift",
+    "gt": {
+      "embedding_centroid_shift": 0.04,
+      "corpus_avg_doc_age_days": 29.9
+    }
+  },
+  {
+    "seq": 25,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 525,
+      "null_rate_customer_id": 0.0072,
+      "mean_amount": 80.59,
+      "std_amount": 15.51,
+      "staleness_min": 4.1
+    }
+  },
+  {
+    "seq": 26,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 8.58
+    }
+  },
+  {
+    "seq": 27,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 3942.6
+    }
+  },
+  {
+    "seq": 28,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 439.09,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 29,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0195,
+      "corpus_avg_doc_age_days": 17.6
+    }
+  },
+  {
+    "seq": 30,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 469,
+      "null_rate_customer_id": 0.0051,
+      "mean_amount": 85.02,
+      "std_amount": 16.9,
+      "staleness_min": 6.11
+    }
+  },
+  {
+    "seq": 31,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.43
+    }
+  },
+  {
+    "seq": 32,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4514.6
+    }
+  },
+  {
+    "seq": 33,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.47,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 34,
+    "etype": "embedding_batch",
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0213,
+      "corpus_avg_doc_age_days": 152.1
+    }
+  },
+  {
+    "seq": 35,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 502,
+      "null_rate_customer_id": 0.0012,
+      "mean_amount": 88.54,
+      "std_amount": 17.75,
+      "staleness_min": 3.51
+    }
+  },
+  {
+    "seq": 36,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.8
+    }
+  },
+  {
+    "seq": 37,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 4574.1
+    }
+  },
+  {
+    "seq": 38,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.76,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 39,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0243,
+      "corpus_avg_doc_age_days": 2.8
+    }
+  },
+  {
+    "seq": 40,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 495,
+      "null_rate_customer_id": 0.005,
+      "mean_amount": 82.96,
+      "std_amount": 14.31,
+      "staleness_min": 6.43
+    }
+  },
+  {
+    "seq": 41,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.5
+    }
+  },
+  {
+    "seq": 42,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4353.5
+    }
+  },
+  {
+    "seq": 43,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 369.42,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 44,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0063,
+      "corpus_avg_doc_age_days": 5.2
+    }
+  },
+  {
+    "seq": 45,
+    "etype": "data_batch",
+    "actual": true,
+    "fault_key": "null_spike",
+    "gt": {
+      "row_count": 517,
+      "null_rate_customer_id": 0.0304,
+      "mean_amount": 83.78,
+      "std_amount": 14.78,
+      "staleness_min": 4.89
+    }
+  },
+  {
+    "seq": 46,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.25
+    }
+  },
+  {
+    "seq": 47,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4376.6
+    }
+  },
+  {
+    "seq": 48,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 491.02,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 49,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.011,
+      "corpus_avg_doc_age_days": 32.3
+    }
+  },
+  {
+    "seq": 50,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 507,
+      "null_rate_customer_id": 0.0058,
+      "mean_amount": 79.12,
+      "std_amount": 13.95,
+      "staleness_min": 3.84
+    }
+  },
+  {
+    "seq": 51,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 3.02
+    }
+  },
+  {
+    "seq": 52,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4397.8
+    }
+  },
+  {
+    "seq": 53,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 162.65,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 54,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0325,
+      "corpus_avg_doc_age_days": 14.5
+    }
+  },
+  {
+    "seq": 55,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 500,
+      "null_rate_customer_id": 0.0012,
+      "mean_amount": 78.55,
+      "std_amount": 14.89,
+      "staleness_min": 6.1
+    }
+  },
+  {
+    "seq": 56,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.4
+    }
+  },
+  {
+    "seq": 57,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4075.2
+    }
+  },
+  {
+    "seq": 58,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 478.57,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 59,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0286,
+      "corpus_avg_doc_age_days": 24.7
+    }
+  },
+  {
+    "seq": 60,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 509,
+      "null_rate_customer_id": 0.0058,
+      "mean_amount": 85.59,
+      "std_amount": 14.13,
+      "staleness_min": 3.93
+    }
+  },
+  {
+    "seq": 61,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.71
+    }
+  },
+  {
+    "seq": 62,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4340.3
+    }
+  },
+  {
+    "seq": 63,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 114.45,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 64,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0162,
+      "corpus_avg_doc_age_days": 32.5
+    }
+  },
+  {
+    "seq": 65,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 504,
+      "null_rate_customer_id": 0.0044,
+      "mean_amount": 83.64,
+      "std_amount": 13.3,
+      "staleness_min": 4.92
+    }
+  },
+  {
+    "seq": 66,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 3.12
+    }
+  },
+  {
+    "seq": 67,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4021.2
+    }
+  },
+  {
+    "seq": 68,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 121.42,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 69,
+    "etype": "embedding_batch",
+    "actual": true,
+    "fault_key": "corpus_staleness",
+    "gt": {
+      "embedding_centroid_shift": 0.0289,
+      "corpus_avg_doc_age_days": 110.9
+    }
+  },
+  {
+    "seq": 70,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 473,
+      "null_rate_customer_id": 0.0049,
+      "mean_amount": 83.15,
+      "std_amount": 14.58,
+      "staleness_min": 0.9
+    }
+  },
+  {
+    "seq": 71,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "type_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "string",
+      "freshness_delay_min": 4.99
+    }
+  },
+  {
+    "seq": 72,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "runtime_anomaly",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 9799.2
+    }
+  },
+  {
+    "seq": 73,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 128.27,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 74,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0374,
+      "corpus_avg_doc_age_days": 26.6
+    }
+  },
+  {
+    "seq": 75,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 498,
+      "null_rate_customer_id": 0.0079,
+      "mean_amount": 84.34,
+      "std_amount": 13.63,
+      "staleness_min": 4.57
+    }
+  },
+  {
+    "seq": 76,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 45.78
+    }
+  },
+  {
+    "seq": 77,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 3970.4
+    }
+  },
+  {
+    "seq": 78,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 120.89,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 79,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0351,
+      "corpus_avg_doc_age_days": 14.7
+    }
+  },
+  {
+    "seq": 80,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 494,
+      "null_rate_customer_id": 0.0042,
+      "mean_amount": 86.52,
+      "std_amount": 12.83,
+      "staleness_min": 5.62
+    }
+  },
+  {
+    "seq": 81,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.9
+    }
+  },
+  {
+    "seq": 82,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4023.5
+    }
+  },
+  {
+    "seq": 83,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 167.19,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 84,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0063,
+      "corpus_avg_doc_age_days": 33.6
+    }
+  },
+  {
+    "seq": 85,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 470,
+      "null_rate_customer_id": 0.0069,
+      "mean_amount": 74.98,
+      "std_amount": 15.54,
+      "staleness_min": 2.81
+    }
+  },
+  {
+    "seq": 86,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 5.17
+    }
+  },
+  {
+    "seq": 87,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4152.6
+    }
+  },
+  {
+    "seq": 88,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 491.99,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 89,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0077,
+      "corpus_avg_doc_age_days": 23.7
+    }
+  },
+  {
+    "seq": 90,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 495,
+      "null_rate_customer_id": 0.0025,
+      "mean_amount": 82.92,
+      "std_amount": 14.66,
+      "staleness_min": 2.05
+    }
+  },
+  {
+    "seq": 91,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.04
+    }
+  },
+  {
+    "seq": 92,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4582.8
+    }
+  },
+  {
+    "seq": 93,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 156.03,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 94,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.02,
+      "corpus_avg_doc_age_days": 16.7
+    }
+  },
+  {
+    "seq": 95,
+    "etype": "data_batch",
+    "actual": true,
+    "fault_key": "distribution_shift",
+    "gt": {
+      "row_count": 557,
+      "null_rate_customer_id": 0.0045,
+      "mean_amount": 88.91,
+      "std_amount": 14.54,
+      "staleness_min": 7.02
+    }
+  },
+  {
+    "seq": 96,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.26
+    }
+  },
+  {
+    "seq": 97,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4640.2
+    }
+  },
+  {
+    "seq": 98,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 122.72,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 99,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0245,
+      "corpus_avg_doc_age_days": 34.1
+    }
+  },
+  {
+    "seq": 100,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 549,
+      "null_rate_customer_id": 0.0057,
+      "mean_amount": 83.86,
+      "std_amount": 15.76,
+      "staleness_min": 4.12
+    }
+  },
+  {
+    "seq": 101,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 1.15
+    }
+  },
+  {
+    "seq": 102,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4027.7
+    }
+  },
+  {
+    "seq": 103,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 166.73,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 104,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0174,
+      "corpus_avg_doc_age_days": 27.0
+    }
+  },
+  {
+    "seq": 105,
+    "etype": "data_batch",
+    "actual": true,
+    "fault_key": "freshness_lag",
+    "gt": {
+      "row_count": 497,
+      "null_rate_customer_id": 0.0067,
+      "mean_amount": 79.3,
+      "std_amount": 15.27,
+      "staleness_min": 31.73
+    }
+  },
+  {
+    "seq": 106,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.37
+    }
+  },
+  {
+    "seq": 107,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "missing_upstream",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4248.2
+    }
+  },
+  {
+    "seq": 108,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 118.84,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 109,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0201,
+      "corpus_avg_doc_age_days": 18.5
+    }
+  },
+  {
+    "seq": 110,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 522,
+      "null_rate_customer_id": 0.0061,
+      "mean_amount": 82.78,
+      "std_amount": 13.96,
+      "staleness_min": 1.86
+    }
+  },
+  {
+    "seq": 111,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 36.36
+    }
+  },
+  {
+    "seq": 112,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4158.5
+    }
+  },
+  {
+    "seq": 113,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 117.89,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 114,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0292,
+      "corpus_avg_doc_age_days": 13.9
+    }
+  },
+  {
+    "seq": 115,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 478,
+      "null_rate_customer_id": 0.0066,
+      "mean_amount": 86.91,
+      "std_amount": 15.94,
+      "staleness_min": 5.52
+    }
+  },
+  {
+    "seq": 116,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.73
+    }
+  },
+  {
+    "seq": 117,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4352.5
+    }
+  },
+  {
+    "seq": 118,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.03,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 119,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0069,
+      "corpus_avg_doc_age_days": 16.8
+    }
+  },
+  {
+    "seq": 120,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 490,
+      "null_rate_customer_id": 0.004,
+      "mean_amount": 85.34,
+      "std_amount": 16.22,
+      "staleness_min": 2.61
+    }
+  },
+  {
+    "seq": 121,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.25
+    }
+  },
+  {
+    "seq": 122,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4587.2
+    }
+  },
+  {
+    "seq": 123,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 156.43,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 124,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0168,
+      "corpus_avg_doc_age_days": 29.3
+    }
+  },
+  {
+    "seq": 125,
+    "etype": "data_batch",
+    "actual": true,
+    "fault_key": "null_spike",
+    "gt": {
+      "row_count": 477,
+      "null_rate_customer_id": 0.0337,
+      "mean_amount": 83.39,
+      "std_amount": 14.97,
+      "staleness_min": 3.59
+    }
+  },
+  {
+    "seq": 126,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.9
+    }
+  },
+  {
+    "seq": 127,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4338.7
+    }
+  },
+  {
+    "seq": 128,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 120.51,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 129,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0228,
+      "corpus_avg_doc_age_days": 19.3
+    }
+  },
+  {
+    "seq": 130,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 486,
+      "null_rate_customer_id": 0.0065,
+      "mean_amount": 82.54,
+      "std_amount": 13.77,
+      "staleness_min": 5.45
+    }
+  },
+  {
+    "seq": 131,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 40.9
+    }
+  },
+  {
+    "seq": 132,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4262.9
+    }
+  },
+  {
+    "seq": 133,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 126.0,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 134,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.01,
+      "corpus_avg_doc_age_days": 24.0
+    }
+  },
+  {
+    "seq": 135,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 513,
+      "null_rate_customer_id": 0.0041,
+      "mean_amount": 79.28,
+      "std_amount": 16.26,
+      "staleness_min": 4.35
+    }
+  },
+  {
+    "seq": 136,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 6.35
+    }
+  },
+  {
+    "seq": 137,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 4067.9
+    }
+  },
+  {
+    "seq": 138,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 116.12,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 139,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0108,
+      "corpus_avg_doc_age_days": 29.3
+    }
+  },
+  {
+    "seq": 140,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 485,
+      "null_rate_customer_id": 0.0041,
+      "mean_amount": 84.18,
+      "std_amount": 14.37,
+      "staleness_min": 5.28
+    }
+  },
+  {
+    "seq": 141,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "sla_violation",
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 18.29
+    }
+  },
+  {
+    "seq": 142,
+    "etype": "lineage_run",
+    "actual": true,
+    "fault_key": "orphan_output",
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 0,
+      "lineage_duration_ms": 3837.9
+    }
+  },
+  {
+    "seq": 143,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 119.5,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 144,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0159,
+      "corpus_avg_doc_age_days": 37.1
+    }
+  },
+  {
+    "seq": 145,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 469,
+      "null_rate_customer_id": 0.004,
+      "mean_amount": 88.55,
+      "std_amount": 16.67,
+      "staleness_min": 4.98
+    }
+  },
+  {
+    "seq": 146,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 2.66
+    }
+  },
+  {
+    "seq": 147,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4484.4
+    }
+  },
+  {
+    "seq": 148,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 126.82,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 149,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0247,
+      "corpus_avg_doc_age_days": 23.3
+    }
+  },
+  {
+    "seq": 150,
+    "etype": "data_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "row_count": 510,
+      "null_rate_customer_id": 0.006,
+      "mean_amount": 84.35,
+      "std_amount": 15.35,
+      "staleness_min": 5.24
+    }
+  },
+  {
+    "seq": 151,
+    "etype": "contract_checkpoint",
+    "actual": true,
+    "fault_key": "schema_break",
+    "gt": {
+      "actual_schema_hash": "sha256:CORRUPTED",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 4.12
+    }
+  },
+  {
+    "seq": 152,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4245.8
+    }
+  },
+  {
+    "seq": 153,
+    "etype": "feature_materialization",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "feature_serve_mean": 117.25,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 154,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0217,
+      "corpus_avg_doc_age_days": 33.0
+    }
+  },
+  {
+    "seq": 155,
+    "etype": "data_batch",
+    "actual": true,
+    "fault_key": "volume_spike",
+    "gt": {
+      "row_count": 832,
+      "null_rate_customer_id": 0.0076,
+      "mean_amount": 80.92,
+      "std_amount": 17.13,
+      "staleness_min": 3.01
+    }
+  },
+  {
+    "seq": 156,
+    "etype": "contract_checkpoint",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_schema_hash": "sha256:5f2a",
+      "actual_amount_type": "float",
+      "freshness_delay_min": 3.48
+    }
+  },
+  {
+    "seq": 157,
+    "etype": "lineage_run",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "actual_upstream": [
+        "raw.orders",
+        "raw.customers"
+      ],
+      "actual_downstream_count": 1,
+      "lineage_duration_ms": 4238.4
+    }
+  },
+  {
+    "seq": 158,
+    "etype": "feature_materialization",
+    "actual": true,
+    "fault_key": "feature_skew",
+    "gt": {
+      "feature_serve_mean": 384.05,
+      "train_mean": 120.0,
+      "train_std": 20.0
+    }
+  },
+  {
+    "seq": 159,
+    "etype": "embedding_batch",
+    "actual": false,
+    "fault_key": null,
+    "gt": {
+      "embedding_centroid_shift": 0.0155,
+      "corpus_avg_doc_age_days": 15.1
+    }
+  }
+]
